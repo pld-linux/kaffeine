@@ -1,12 +1,12 @@
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.4.3b
+Version:	0.5
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	a1bbcbf5dccffc81cb168472d9e87ecd
+# Source0-md5:	dffc384423e6cb8e20c5ad49242814d7
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
@@ -55,13 +55,20 @@ echo "Categories=Qt;KDE;AudioVideo;" \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kaffeine
-%{_libdir}/libkaffeinepart.la
-%attr(755,root,root) %{_libdir}/libkaffeinepart.so
+%{_libdir}/kde3/libkaffeinepart.la
+%{_libdir}/libkmediapart.la
+%attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
+%attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/profiles/kaffeine.profile.xml
 %{_datadir}/services/kaffeine_part.desktop
 %{_desktopdir}/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
+%{_mandir}/man1/kaffeine.1*
+%lang(de) %{_mandir}/de/man1/kaffeine.1*
