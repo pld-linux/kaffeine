@@ -2,7 +2,7 @@ Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.5
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
@@ -51,6 +51,9 @@ mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/%{name}.desktop \
 echo "Categories=Qt;KDE;AudioVideo;" \
 	>> $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
+# no devel libraries, why did these get installed?
+rm -rf $RPM_BUILD_ROOT%{_includedir}/%{name}
+
 %find_lang %{name} --with-kde
 
 %clean
@@ -67,7 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
 %{_libdir}/kde3/libkaffeinepart.la
 %{_datadir}/apps/kaffeine
+%{_datadir}/apps/konqueror/servicemenus/*
 %{_datadir}/apps/profiles/kaffeine.profile.xml
+%{_datadir}/mimelnk/application/*.desktop
 %{_datadir}/services/kaffeine_part.desktop
 %{_desktopdir}/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
