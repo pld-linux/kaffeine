@@ -29,7 +29,6 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %patch0 -p1
 
 %build
-
 %configure
 
 %{__make}
@@ -47,7 +46,7 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 mv $RPM_BUILD_ROOT%{_applnkdir}/Multimedia/%{name}.desktop \
     $RPM_BUILD_ROOT%{_desktopdir}
 
-echo "Categories=Qt;KDE;AudioVideo" \
+echo "Categories=Qt;KDE;AudioVideo;" \
 	>> $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %find_lang %{name} --with-kde
