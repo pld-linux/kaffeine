@@ -1,0 +1,21 @@
+--- kaffeine-0.3.2/Makefile.am~	2003-07-06 14:09:20.000000000 +0200
++++ kaffeine-0.3.2/Makefile.am	2003-08-16 19:06:10.000000000 +0200
+@@ -1,6 +1,6 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ 
+-SUBDIRS = kaffeine po doc misc 
++SUBDIRS = kaffeine po misc 
+ 
+ EXTRA_DIST = kaffeine.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kaffeine.lsm LIESMICH 
+ 
+--- kaffeine-0.3.2/Makefile.in~	2003-07-06 20:24:40.000000000 +0200
++++ kaffeine-0.3.2/Makefile.in	2003-08-16 19:06:45.000000000 +0200
+@@ -250,7 +250,7 @@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ 
+-SUBDIRS = kaffeine po doc misc 
++SUBDIRS = kaffeine po misc 
+ 
+ EXTRA_DIST = kaffeine.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kaffeine.lsm LIESMICH 
+ 
