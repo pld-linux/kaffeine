@@ -1,7 +1,0 @@
---- kaffeine-0.3.2/kaffeine/kaffeine.desktop~	2003-06-30 22:58:39.000000000 +0200
-+++ kaffeine-0.3.2/kaffeine/kaffeine.desktop	2003-08-15 21:21:59.000000000 +0200
-@@ -18,3 +18,4 @@
- Type=Application
- X-KDE-SubstituteUID=false
- X-KDE-Username=
-+Categories=Qt;KDE;AudioVideo
