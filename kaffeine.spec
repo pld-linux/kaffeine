@@ -1,13 +1,12 @@
-
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.4.1
-Release:	1
+Version:	0.4.3b
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	bdfae4914c81afa5236d0df3669f74cd
+# Source0-md5:	a1bbcbf5dccffc81cb168472d9e87ecd
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
@@ -61,12 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kaffeine
 %{_libdir}/libkaffeinepart.la
 %attr(755,root,root) %{_libdir}/libkaffeinepart.so
-%dir %{_libdir}/kaffeineplugin
-%{_libdir}/kaffeineplugin/kaffeineplugin.la
-%attr(755,root,root) %{_libdir}/kaffeineplugin/kaffeineplugin.so
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/profiles/kaffeine.profile.xml
-%{_datadir}/mimelnk/video/matroska.desktop
 %{_datadir}/services/kaffeine_part.desktop
 %{_desktopdir}/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
