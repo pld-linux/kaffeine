@@ -8,6 +8,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Source0-md5:	dffc384423e6cb8e20c5ad49242814d7
 URL:		http://kaffeine.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0
