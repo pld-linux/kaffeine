@@ -8,6 +8,7 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Source0-md5:	bdfae4914c81afa5236d0df3669f74cd
+URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0
