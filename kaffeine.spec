@@ -9,7 +9,7 @@ Release:	0.%{_rc}.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}%{_rc}.tar.gz
-# Source0-md5:	92ceceb67a4a672a265c159889e290d0
+# Source0-md5:	5f8093e226803f2920d85a7fa30b19fe
 Patch0:		%{name}-nodoc.patch
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
