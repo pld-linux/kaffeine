@@ -27,8 +27,12 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %patch0 -p1
 
 %build
+cp /usr/share/automake/config.sub admin
 
-%configure
+%{__make} -f admin/Makefile.common
+
+%configure \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
