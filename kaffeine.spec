@@ -5,7 +5,7 @@ Version:	0.5
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 # Source0-md5:	dffc384423e6cb8e20c5ad49242814d7
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
@@ -62,10 +62,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kaffeine
-%{_libdir}/kde3/libkaffeinepart.la
+%attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
 %{_libdir}/libkmediapart.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
-%attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
+%{_libdir}/kde3/libkaffeinepart.la
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/profiles/kaffeine.profile.xml
 %{_datadir}/services/kaffeine_part.desktop
