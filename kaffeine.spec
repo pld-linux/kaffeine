@@ -11,7 +11,7 @@ Source0:	http://members.chello.at/kaffeine/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-nodoc.patch
 URL:		http://members.chello.at/kaffeine/
-BuildRequires:	kdelibs-devel >= 3.1	
+BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	xine-lib-devel >= 1.0rc0a
 Requires:	xine-lib >= 1.0rc0a
 Requires:	kdebase-core >= 9:3.1.90
@@ -43,14 +43,14 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
         kde_appsdir=%{_applnkdir} \
-	kde_htmldir=%{_htmldir} 	
+	kde_htmldir=%{_htmldir}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 mv $RPM_BUILD_ROOT%{_applnkdir}/Multimedia/kaffeine.desktop \
     $RPM_BUILD_ROOT%{_desktopdir}
 
-%find_lang	%{name}		--with-kde	
+%find_lang	%{name}		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
