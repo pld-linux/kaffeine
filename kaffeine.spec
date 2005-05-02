@@ -1,12 +1,15 @@
+# TODO
+# - kaffeine-mozilla-0.2.tar.bz2 (Starter-Plugin for Mozilla)
+# - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.5
-Release:	1
+Version:	0.6
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	dffc384423e6cb8e20c5ad49242814d7
+# Source0-md5:	7412abf5f646a0fd62ac5ad3dba80ab2
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
