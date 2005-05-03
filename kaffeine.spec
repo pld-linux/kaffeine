@@ -5,11 +5,12 @@ Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.6
-Release:	0.1
+Release:	0.3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 # Source0-md5:	7412abf5f646a0fd62ac5ad3dba80ab2
+Patch0:		%{name}-win32-path.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
@@ -17,6 +18,7 @@ BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0
 Requires:	kdebase-core >= 9:3.1.90
 Requires:	xine-lib >= 1:1.0
+Requires:	libdvdcss
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,6 +29,7 @@ W pe³ni zintegrowany z KDE frontend do xine.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp /usr/share/automake/config.sub admin
@@ -34,7 +37,6 @@ cp /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common
 
 %configure \
-	--enable-final \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
 
