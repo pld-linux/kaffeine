@@ -1,0 +1,17 @@
+--- kaffeine-0.6/kaffeine/wizarddialog.cpp~	2005-02-02 12:08:21.000000000 +0200
++++ kaffeine-0.6/kaffeine/wizarddialog.cpp	2005-05-03 12:11:12.000000000 +0300
+@@ -99,12 +99,12 @@
+          << " <a href=\"http://www.xinehq.de\">http://www.xinehq.de</a>.</font>";  
+   
+   info << "<hr><b>" << i18n("WIN32 Codecs") << "...</b><br>";  
+-  QDir d("/usr/lib/win32");
++  QDir d("/usr/lib/codecs");
+   QStringList entries = d.entryList("wmv*");
+   if (entries.count())
+     info << "<font color=\"DarkGreen\">" << i18n("Ok.") << "</font>";
+    else    
+-    info << "<font color=\"DarkRed\">" << i18n("No WIN32 codecs found in /usr/lib/win32. You're not able to play Windows Media 9 files, newer Real Media files and some less common formats. Download the codecs here:")
++    info << "<font color=\"DarkRed\">" << i18n("No WIN32 codecs found in /usr/lib/codecs. You're not able to play Windows Media 9 files, newer Real Media files and some less common formats. Download the codecs here:")
+     << " <a href=\"http://www1.mplayerhq.hu/homepage/design7/codecs.html\">http://www.mplayerhq.hu</a>.</font>"; 
+   
+   info << "<hr><b>" << "libdvdcss" << "...</b><br>";      
