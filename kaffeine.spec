@@ -34,6 +34,7 @@ cp /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common
 
 %configure \
+	--enable-final \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
 
@@ -56,6 +57,9 @@ echo "Categories=Qt;KDE;AudioVideo;" \
 
 # no devel libraries, why did these get installed?
 rm -rf $RPM_BUILD_ROOT%{_includedir}/%{name}
+
+# rename, conflicts with kmplayer-0.8.4-1
+mv $RPM_BUILD_ROOT/%{_datadir}/mimelnk/application/x-{mplayer2,kaffeine}.desktop
 
 %find_lang %{name} --with-kde
 
