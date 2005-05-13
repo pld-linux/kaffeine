@@ -17,6 +17,7 @@ BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0
 Requires:	kdebase-core >= 9:3.1.90
+Requires:	kdelibs >= 9:3.4.0-4
 Requires:	xine-lib >= 1:1.0
 Requires:	libdvdcss
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -60,8 +61,7 @@ echo "Categories=Qt;KDE;AudioVideo;" \
 # no devel libraries, why did these get installed?
 rm -rf $RPM_BUILD_ROOT%{_includedir}/%{name}
 
-# rename, conflicts with kmplayer-0.8.4-1
-mv $RPM_BUILD_ROOT/%{_datadir}/mimelnk/application/x-{mplayer2,kaffeine}.desktop
+rm $RPM_BUILD_ROOT/%{_datadir}/mimelnk/application/x-mplayer2.desktop
 
 %find_lang %{name} --with-kde
 
