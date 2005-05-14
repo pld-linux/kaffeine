@@ -58,9 +58,6 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/%{name}.desktop \
     $RPM_BUILD_ROOT%{_desktopdir}
 
-echo "Categories=Qt;KDE;AudioVideo;" \
-	>> $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
-
 # no devel libraries, why did these get installed?
 rm -rf $RPM_BUILD_ROOT%{_includedir}/%{name}
 
