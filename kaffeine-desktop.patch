@@ -6,7 +6,7 @@
 -Comment=Version 0.6
 -Comment[de]=Version 0.6
 -Comment[sv]=Version 0.6
-+Categories=Qt;KDE;AudioVideo;
++Categories=Qt;KDE;AudioVideo;Player;
 +Comment=Media Player
 +Comment[de]=Multimedia-Wiedergabe
 +Comment[fi]=Mediasoitin
