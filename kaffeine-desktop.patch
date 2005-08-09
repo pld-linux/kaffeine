@@ -1,8 +1,18 @@
 --- kaffeine-0.6/kaffeine/kaffeine.desktop~	2005-05-14 10:39:18.000000000 +0200
 +++ kaffeine-0.6/kaffeine/kaffeine.desktop	2005-05-14 10:39:18.000000000 +0200
+@@ -11,6 +15,7 @@
+ GenericName[fi]=Mediasoitin
+ GenericName[he]=נגן מדיה
+ GenericName[nb]=Mediespiller
++GenericName[pl]=Odtwarzacz multimediów
+ Icon=kaffeine
+ MimeType=application/x-ogg;audio/basic;audio/vnd.rn-realaudio;audio/x-aiff;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-ms-wma;audio/x-ogg;audio/x-pn-realaudio;audio/x-pn-realaudio-plugin;audio/x-scpls;audio/x-wav;audio/x-flac;video/x-matroska;audio/x-matroska;video/mpeg;video/msvideo;video/quicktime;video/vnd.rn-realvideo;video/x-avi;video/x-fli;video/x-flic;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;application/x-mplayer2;application/smil;application/x-kaffeine;audio/x-musepack;
+ Name=Kaffeine
+--- ./kaffeine/kaffeine.desktop~	2005-08-09 12:13:32.000000000 +0300
++++ ./kaffeine/kaffeine.desktop	2005-08-09 12:14:44.000000000 +0300
 @@ -1,8 +1,12 @@
  [Desktop Entry]
--Categories=Application;AudioVideo;KDE;
+-Categories=Qt;KDE;Application;AudioVideo;Player;
 -Comment=Version 0.6
 -Comment[de]=Version 0.6
 -Comment[sv]=Version 0.6
@@ -14,14 +24,6 @@
 +Comment[nb]=Mediespiller
 +Comment[pl]=Odtwarzacz multimediów
 +Comment[sv]=Mediaspelare
+ DocPath=kaffeine/index.html
  Encoding=UTF-8
  Exec=kaffeine %U
- GenericName=Media Player
-@@ -11,6 +15,7 @@
- GenericName[fi]=Mediasoitin
- GenericName[he]=נגן מדיה
- GenericName[nb]=Mediespiller
-+GenericName[pl]=Odtwarzacz multimediów
- Icon=kaffeine
- MimeType=application/x-ogg;audio/basic;audio/vnd.rn-realaudio;audio/x-aiff;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-ms-wma;audio/x-ogg;audio/x-pn-realaudio;audio/x-pn-realaudio-plugin;audio/x-scpls;audio/x-wav;audio/x-flac;video/x-matroska;audio/x-matroska;video/mpeg;video/msvideo;video/quicktime;video/vnd.rn-realvideo;video/x-avi;video/x-fli;video/x-flic;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;application/x-mplayer2;application/smil;application/x-kaffeine;audio/x-musepack;
- Name=Kaffeine

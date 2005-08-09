@@ -1,11 +1,13 @@
---- kaffeine-0.6/po/Makefile.in~	2005-05-14 10:31:09.000000000 +0200
-+++ kaffeine-0.6/po/Makefile.in	2005-05-14 10:31:09.000000000 +0200
-@@ -296,7 +296,7 @@
+--- ./po/Makefile.in~	2005-08-09 12:11:23.000000000 +0300
++++ ./po/Makefile.in	2005-08-09 12:12:51.000000000 +0300
+@@ -309,8 +309,8 @@
  ####### kdevelop will overwrite this part!!! (end)############
  #>- POFILES = AUTO
  #>+ 2
--POFILES = zh_CN.po da.po de.po cs.po es.po fi.po fr.po he.po hu.po ja.po it.po mk.po nb.po nl.po nn.po pl.po ru.po sv.po tr.po pt_BR.po pt_PT.po
-+POFILES = zh_CN.po da.po de.po cs.po es.po fi.po fr.po he.po hu.po ja.po it.po mk.po nb.po nl.po nn.po pl.po ru.po sv.po tr.po pt_BR.po pt.po
- GMOFILES = zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fi.gmo fr.gmo he.gmo hu.gmo ja.gmo it.gmo mk.gmo nb.gmo nl.gmo nn.gmo pl.gmo ru.gmo sv.gmo tr.gmo pt_BR.gmo pt_PT.gmo
+-POFILES = zh_CN.po zh_TW.po da.po de.po cs.po el.po es.po fi.po et.po fr.po gl.po he.po hu.po ja.po it.po mk.po nb.po ms.po nl.po nn.po pl.po ru.po sl.po sv.po tr.po pt_BR.po pt_PT.po
+-GMOFILES = zh_CN.gmo zh_TW.gmo da.gmo de.gmo cs.gmo el.gmo es.gmo fi.gmo et.gmo fr.gmo gl.gmo he.gmo hu.gmo ja.gmo it.gmo mk.gmo nb.gmo ms.gmo nl.gmo nn.gmo pl.gmo ru.gmo sl.gmo sv.gmo tr.gmo pt_BR.gmo pt_PT.gmo
++POFILES = zh_CN.po zh_TW.po da.po de.po cs.po el.po es.po fi.po et.po fr.po gl.po he.po hu.po ja.po it.po mk.po nb.po ms.po nl.po nn.po pl.po ru.po sl.po sv.po tr.po pt_BR.po pt.po
++GMOFILES = zh_CN.gmo zh_TW.gmo da.gmo de.gmo cs.gmo el.gmo es.gmo fi.gmo et.gmo fr.gmo gl.gmo he.gmo hu.gmo ja.gmo it.gmo mk.gmo nb.gmo ms.gmo nl.gmo nn.gmo pl.gmo ru.gmo sl.gmo sv.gmo tr.gmo pt_BR.gmo pt.gmo
  EXTRA_DIST = kaffeine.pot
  #>- all: all-am
+ #>+ 1

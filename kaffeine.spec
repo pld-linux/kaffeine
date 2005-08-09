@@ -4,12 +4,12 @@
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.6
-Release:	3
+Version:	0.7
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	7412abf5f646a0fd62ac5ad3dba80ab2
+# Source0-md5:	6b887a80af11a9a252bd3c1524ef31f5
 Patch0:		%{name}-win32-path.patch
 Patch1:		%{name}-locale_names.patch
 Patch2:		%{name}-desktop.patch
@@ -55,13 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}
-
-mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/%{name}.desktop \
-    $RPM_BUILD_ROOT%{_desktopdir}
-
 # no devel libraries, why did these get installed?
-rm -rf $RPM_BUILD_ROOT%{_includedir}/%{name}
+rm -r $RPM_BUILD_ROOT%{_includedir}/%{name}
+rm $RPM_BUILD_ROOT%{_includedir}/%{name}_export.h
 
 rm $RPM_BUILD_ROOT/%{_datadir}/mimelnk/application/x-mplayer2.desktop
 
@@ -79,13 +75,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
 %{_libdir}/libkmediapart.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
+%attr(755,root,root) %{_libdir}/kde3/libgstreamerpart.so
 %{_libdir}/kde3/libkaffeinepart.la
+%{_libdir}/kde3/libgstreamerpart.la
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/konqueror/servicemenus/*
 %{_datadir}/apps/profiles/kaffeine.profile.xml
+# FIXME: move to kdelibs the directory?
+%dir %{_datadir}/apps/gstreamerpart
+%{_datadir}/apps/gstreamerpart/gstreamer_part.rc
 %{_datadir}/mimelnk/application/*.desktop
 %{_datadir}/services/kaffeine_part.desktop
-%{_desktopdir}/kaffeine.desktop
+%{_datadir}/services/gstreamer_part.desktop
+%{_desktopdir}/kde/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
 %{_mandir}/man1/kaffeine.1*
 %lang(de) %{_mandir}/de/man1/kaffeine.1*
