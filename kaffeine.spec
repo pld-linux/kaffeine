@@ -4,12 +4,12 @@
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.7
-Release:	0.1
+Version:	0.7.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	6b887a80af11a9a252bd3c1524ef31f5
+# Source0-md5:	afde61516eb8f6cf2c3bf085a22ef427
 Patch0:		%{name}-win32-path.patch
 Patch1:		%{name}-locale_names.patch
 Patch2:		%{name}-desktop.patch
