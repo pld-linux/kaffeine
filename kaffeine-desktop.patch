@@ -13,9 +13,9 @@
 @@ -1,8 +1,12 @@
  [Desktop Entry]
 -Categories=Qt;KDE;Application;AudioVideo;Player;
--Comment=Version 0.6
--Comment[de]=Version 0.6
--Comment[sv]=Version 0.6
+-Comment=Version 0.7.1
+-Comment[de]=Version 0.7.1
+-Comment[sv]=Version 0.7.1
 +Categories=Qt;KDE;AudioVideo;Player;
 +Comment=Media Player
 +Comment[de]=Multimedia-Wiedergabe
