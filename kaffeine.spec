@@ -1,11 +1,14 @@
 # TODO
 # - kaffeine-mozilla-0.2.tar.bz2 (Starter-Plugin for Mozilla)
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
+
+%bcond_without	gstreamer	# build without gstreamer part
+
 Summary:	A KDE xine frontend
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.7.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
@@ -18,6 +21,12 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0
+%if %{with gstreamer}
+BuildRequires:	gstreamer-plugins-devel >= 0.8.4
+BuildRequires:	gstreamer-plugins-devel < 0.9.0
+Requires:	gstreamer >= 0.8.4
+Requires:	gstreamer < 0.9.0
+%endif
 Requires:	kdebase-core >= 9:3.1.90
 Requires:	kdelibs >= 9:3.4.0-4
 Requires:	xine-lib >= 1:1.0
@@ -39,13 +48,12 @@ mv -f po/{pt_PT,pt}.po
 
 %build
 cp /usr/share/automake/config.sub admin
-
 %{__make} -f admin/Makefile.common
 
 %configure \
 	--disable-rpath \
-	--with-qt-libraries=%{_libdir}
-
+	--with-qt-libraries=%{_libdir} \
+	--with%{?!with_gstreamer:out}-gstreamer
 %{__make}
 
 %install
@@ -75,19 +83,22 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
 %{_libdir}/libkmediapart.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
-%attr(755,root,root) %{_libdir}/kde3/libgstreamerpart.so
 %{_libdir}/kde3/libkaffeinepart.la
-%{_libdir}/kde3/libgstreamerpart.la
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/konqueror/servicemenus/*
 %{_datadir}/apps/profiles/kaffeine.profile.xml
-# FIXME: move to kdelibs the directory?
-%dir %{_datadir}/apps/gstreamerpart
-%{_datadir}/apps/gstreamerpart/gstreamer_part.rc
 %{_datadir}/mimelnk/application/*.desktop
 %{_datadir}/services/kaffeine_part.desktop
-%{_datadir}/services/gstreamer_part.desktop
 %{_desktopdir}/kde/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
 %{_mandir}/man1/kaffeine.1*
 %lang(de) %{_mandir}/de/man1/kaffeine.1*
+
+# gstreamer part
+%if %{with gstreamer}
+%attr(755,root,root) %{_libdir}/kde3/libgstreamerpart.so
+%{_libdir}/kde3/libgstreamerpart.la
+%dir %{_datadir}/apps/gstreamerpart
+%{_datadir}/apps/gstreamerpart/gstreamer_part.rc
+%{_datadir}/services/gstreamer_part.desktop
+%endif
