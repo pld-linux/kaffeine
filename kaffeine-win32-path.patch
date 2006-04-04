@@ -1,5 +1,5 @@
---- ./kaffeine/wizarddialog.cpp~	2005-09-05 01:44:52.000000000 +0300
-+++ ./kaffeine/wizarddialog.cpp	2005-09-05 01:45:47.000000000 +0300
+--- ./kaffeine/src/wizarddialog.cpp~	2005-09-05 01:44:52.000000000 +0300
++++ ./kaffeine/src/wizarddialog.cpp	2005-09-05 01:45:47.000000000 +0300
 @@ -101,12 +101,12 @@
  
  	//WIN32-CODECS
