@@ -4,11 +4,11 @@
 
 %bcond_without	gstreamer	# build without gstreamer part
 
-Summary:	A KDE xine frontend
+Summary:	Full featured Multimedia-Player for KDE.
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.1
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
@@ -33,7 +33,8 @@ Requires:	xine-lib >= 1:1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A powerful, fully integrated with KDE xine GUI.
+Kaffeine is a full featured Multimedia-Player for KDE. By default it
+uses xine as backend.
 
 %description -l pl
 W pe³ni zintegrowany z KDE frontend do xine.
