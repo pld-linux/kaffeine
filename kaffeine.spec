@@ -4,7 +4,7 @@
 
 %bcond_without	gstreamer	# build without gstreamer part
 
-Summary:	Full featured Multimedia-Player for KDE.
+Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.1
@@ -17,7 +17,9 @@ Patch0:		%{name}-win32-path.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	cdparanoia-III-devel
+BuildRequires:	kdelibs-devel >= 9:3.1
+BuildRequires:	lame-libs-devel
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 1:1.0.2
 %if %{with gstreamer}
