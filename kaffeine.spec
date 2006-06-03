@@ -8,7 +8,7 @@ Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.1
-Release:	2
+Release:	2.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
@@ -25,7 +25,7 @@ BuildRequires:	xine-lib-devel >= 1:1.0.2
 %if %{with gstreamer}
 BuildRequires:	gstreamer-plugins-devel < 0.9.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.4
-Requires:	gstreamer < 0.9.0
+Requires:	gstreamer08x < 0.9.0
 Requires:	gstreamer >= 0.8.4
 %endif
 Requires:	kdebase-core >= 9:3.1.90
@@ -52,7 +52,7 @@ cp /usr/share/automake/config.sub admin
 %configure \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir} \
-	--with%{?!with_gstreamer:out}-gstreamer
+	--with%{!?with_gstreamer:out}-gstreamer
 %{__make}
 
 %install
