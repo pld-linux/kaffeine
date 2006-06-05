@@ -1,9 +1,10 @@
 # TODO
 # - kaffeine-mozilla-0.2.tar.bz2 (Starter-Plugin for Mozilla)
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
-
+#
+# Conditional build:
 %bcond_without	gstreamer	# build without gstreamer part
-
+#
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
@@ -25,8 +26,7 @@ BuildRequires:	xine-lib-devel >= 1:1.0.2
 %if %{with gstreamer}
 BuildRequires:	gstreamer-plugins-devel < 0.9.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.4
-Requires:	gstreamer08x < 0.9.0
-Requires:	gstreamer >= 0.8.4
+Requires:	gstreamer08x >= 0.8.4
 %endif
 Requires:	kdebase-core >= 9:3.1.90
 Requires:	kdelibs >= 9:3.4.0-4
@@ -47,7 +47,7 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %patch1 -p1
 
 %build
-cp /usr/share/automake/config.sub admin
+cp -f /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common
 %configure \
 	--disable-rpath \
