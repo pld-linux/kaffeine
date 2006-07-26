@@ -66,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -r $RPM_BUILD_ROOT%{_includedir}/%{name}
 rm $RPM_BUILD_ROOT%{_includedir}/%{name}_export.h
 
-rm $RPM_BUILD_ROOT/%{_datadir}/mimelnk/application/x-mplayer2.desktop
+rm $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-mplayer2.desktop
 
 # pick docs
 %find_lang %{name} --with-kde
