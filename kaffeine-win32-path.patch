@@ -1,7 +1,7 @@
---- ./kaffeine/src/wizarddialog.cpp~	2005-09-05 01:44:52.000000000 +0300
-+++ ./kaffeine/src/wizarddialog.cpp	2005-09-05 01:45:47.000000000 +0300
-@@ -101,12 +101,12 @@
- 
+--- kaffeine-0.8.2/kaffeine/src/instwizard.cpp~	2006-09-09 00:49:52.000000000 +0300
++++ kaffeine-0.8.2/kaffeine/src/instwizard.cpp	2006-09-09 02:41:29.837814164 +0300
+@@ -103,12 +103,12 @@
+ 	*/
  	//WIN32-CODECS
  	info << "<hr><b>" << i18n("WIN32 Codecs") << "...</b><br>";
 -	QDir d("/usr/lib/win32");

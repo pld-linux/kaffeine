@@ -18,31 +18,73 @@
  Comment=Version 0.8
  Comment[bg]=Версия 0.8
  Comment[br]=Stumm 0.8
---- kaffeine-0.8.1/kaffeine/src/kaffeine.desktop~	2006-04-04 14:16:16.621363587 +0300
-+++ kaffeine-0.8.1/kaffeine/src/kaffeine.desktop	2006-04-04 14:18:27.014260694 +0300
-@@ -1,15 +1,15 @@
+--- kaffeine-0.8.2/kaffeine/src/kaffeine.desktop~	2006-09-09 02:44:39.172074755 +0300
++++ kaffeine-0.8.2/kaffeine/src/kaffeine.desktop	2006-09-09 02:44:47.772268331 +0300
+@@ -1,30 +1,42 @@
  [Desktop Entry]
  Categories=Qt;KDE;AudioVideo;Player;
 -Comment=Version 0.8
+-Comment[ar]=أصدارة 0.8
 -Comment[bg]=Версия 0.8
 -Comment[br]=Stumm 0.8
+-Comment[ca]=Versió 0.8
+-Comment[cs]=Verze 0.8
 -Comment[el]=Έκδοση 0.8
+-Comment[es]=Versión 0.8
+-Comment[et]=Versioon 0.8
+-Comment[fi]=Versio 0.8
 -Comment[ga]=Leagan 0.8
+-Comment[gl]=Versión 0.8
+-Comment[is]=Útgáfa 0.8
 -Comment[it]=Versione 0.8
 -Comment[ja]=バージョン 0.8
+-Comment[ka]=ვერსია 0.8
+-Comment[nb]=Versjon 0.8
 -Comment[nl]=Versie 0.8
+-Comment[pl]=Wersja 0.8
 -Comment[pt]=Versão 0.8
 -Comment[pt_BR]=Versão 0.8
+-Comment[tr]=Sürüm 0.8
+-Comment[uk]=Версія 0.8
+-Comment[zh_CN]=版本 0.8
+-Comment[zh_TW]=版本 0.8
 +Comment=Media Player
++Comment[ar]=قارء الوسائط
 +Comment[bg]=Медия плеър
++Comment[bn]=মিডিয়া প্লেয়ার
 +Comment[br]=Soner liesvedia
++Comment[ca]=Reproductor de medis
++Comment[cs]=Přehrávač médií
++Comment[da]=Medieafspiller
++Comment[de]=Medienwiedergabe
 +Comment[el]=Αναπαραγωγέας πολυμέσων
++Comment[es]=Reproductor de medios
++Comment[et]=Multimeedia mängija
++Comment[fi]=Mediasoitin
++Comment[fr]=Lecteur de média
 +Comment[ga]=Seinnteoir Meán
++Comment[gl]=Reprodutor Multimédia
++Comment[he]=נגן מדיה
++Comment[is]=Margmiðlunarspilari
 +Comment[it]=Lettore multimediale
 +Comment[ja]=メディアプレーヤ
++Comment[ka]=მედიადამკვრელი
++Comment[km]=កម្មវិធី​ចាក់​មេឌៀ
++Comment[nb]=Mediaspiller
 +Comment[nl]=Mediaspeler
++Comment[nn]=Mediespelar
++Comment[pa]=ਵੀਡਿਓ ਪਲੇਅਰ
++Comment[pl]=Odtwarzacz multimediów
 +Comment[pt]=Leitor Multimédia
 +Comment[pt_BR]=Reprodutor Multimídia
++Comment[sr]=Медија плејер
++Comment[sr@Latn]=Medija plejer
++Comment[sv]=Mediaspelare
++Comment[tr]=Medya Oynatıcısı
++Comment[uk]=Програвач медіа-матеріалів
++Comment[xx]=xxMedia Playerxx
++Comment[zh_CN]=媒体播放器
++Comment[zh_TW]=媒體播放程式
  DocPath=kaffeine/index.html
  Encoding=UTF-8
  Exec=kaffeine %U
