@@ -8,12 +8,12 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.8.1
-Release:	3
+Version:	0.8.2
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	3abba4ff76ffdd109e1f1cfe286e5b5b
+# Source0-md5:	bfb57b62fa72267cc5b01ce9b037cb41
 Patch0:		%{name}-win32-path.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kaffeine.sourceforge.net/
@@ -84,12 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kaffeine
-%attr(755,root,root) %{_libdir}/libkmediapart.so.0.0.1
-%{_libdir}/libkmediapart.la
 %attr(755,root,root) %{_libdir}/libkaffeineaudioencoder.so.0.0.1
 %{_libdir}/libkaffeineaudioencoder.la
-%attr(755,root,root) %{_libdir}/kde3/libkaffeinepart.so
-%{_libdir}/kde3/libkaffeinepart.la
 %{_libdir}/kde3/libkaffeinemp3lame.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinemp3lame.so
 %{_libdir}/kde3/libkaffeineoggvorbis.la
@@ -98,14 +94,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/konqueror/servicemenus/*
 %{_datadir}/apps/profiles/kaffeine.profile.xml
 %{_datadir}/mimelnk/application/*.desktop
-%{_datadir}/services/kaffeine_part.desktop
 %{_datadir}/services/kaffeinemp3lame.desktop
 %{_datadir}/services/kaffeineoggvorbis.desktop
 %{_datadir}/servicetypes/kaffeineaudioencoder.desktop
 %{_desktopdir}/kde/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
-#%{_mandir}/man1/kaffeine.1*
-#%lang(de) %{_mandir}/de/man1/kaffeine.1*
+%{_libdir}/kde3/libxinepart.la
+%attr(755,root,root) %{_libdir}/kde3/libxinepart.so
+%{_libdir}/libkaffeinedvbplugin.la
+%attr(755,root,root) %{_libdir}/libkaffeinedvbplugin.so.0.0.1
+%{_libdir}/libkaffeinepart.la
+%attr(755,root,root) %{_libdir}/libkaffeinepart.so.0.0.1
+%{_datadir}/services/xine_part.desktop
+%{_datadir}/servicetypes/kaffeinedvbplugin.desktop
 
 # gstreamer part
 %if %{with gstreamer}
