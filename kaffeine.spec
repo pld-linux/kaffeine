@@ -14,8 +14,9 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 # Source0-md5:	bfb57b62fa72267cc5b01ce9b037cb41
-Patch0:		%{name}-win32-path.patch
-Patch1:		%{name}-desktop.patch
+Patch0:		kde-common-PLD.patch
+Patch1:		%{name}-win32-path.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
@@ -45,6 +46,7 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
