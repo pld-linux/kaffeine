@@ -17,7 +17,6 @@ Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-win32-path.patch
 Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-ac260.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
@@ -48,7 +47,6 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
