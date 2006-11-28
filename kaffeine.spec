@@ -66,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # no devel libraries, why did these get installed?
 rm -r $RPM_BUILD_ROOT%{_includedir}/%{name}
-rm $RPM_BUILD_ROOT%{_includedir}/%{name}_export.h
 
 rm $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-mplayer2.desktop
 
