@@ -8,12 +8,12 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.8.2
+Version:	0.8.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	bfb57b62fa72267cc5b01ce9b037cb41
+# Source0-md5:	667dd56cf02f1343b3a466a685afdf24
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-win32-path.patch
 Patch2:		%{name}-desktop.patch
