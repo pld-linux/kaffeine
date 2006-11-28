@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkaffeinedvbplugin.la
 %attr(755,root,root) %{_libdir}/libkaffeinedvbplugin.so.0.0.1
 %{_libdir}/libkaffeinepart.la
-%attr(755,root,root) %{_libdir}/libkaffeinepart.so.0.0.1
+%attr(755,root,root) %{_libdir}/libkaffeinepart.so
 %{_datadir}/services/xine_part.desktop
 %{_datadir}/servicetypes/kaffeinedvbplugin.desktop
 
