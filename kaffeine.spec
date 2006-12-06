@@ -24,16 +24,14 @@ BuildRequires:	cdparanoia-III-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	lame-libs-devel
 BuildRequires:	rpmbuild(macros) >= 1.122
-BuildRequires:	xine-lib-devel >= 1:1.0.2
+BuildRequires:	xine-lib-devel >= 2:1.1.0
 %if %{with gstreamer}
 BuildRequires:	gstreamer-plugins-devel < 0.9.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.4
 Requires:	gstreamer08x >= 0.8.4
 %endif
 Requires:	kdebase-core >= 9:3.2.0
-Requires:	kdelibs >= 9:3.2.0
 Requires:	libdvdcss
-Requires:	xine-lib >= 1:1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
