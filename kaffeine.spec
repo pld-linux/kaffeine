@@ -6,7 +6,7 @@
 %bcond_without	gstreamer	# build without gstreamer part
 #
 Summary:	Full featured Multimedia-Player for KDE
-Summary(pl):	Frontend do xine pod KDE
+Summary(pl.UTF-8):   Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.3
 Release:	1
@@ -38,8 +38,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Kaffeine is a full featured Multimedia-Player for KDE. By default it
 uses xine as backend.
 
-%description -l pl
-W pe≥ni zintegrowany z KDE frontend do xine.
+%description -l pl.UTF-8
+W pe≈Çni zintegrowany z KDE frontend do xine.
 
 %prep
 %setup -q
