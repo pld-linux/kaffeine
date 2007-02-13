@@ -6,7 +6,7 @@
 %bcond_without	gstreamer	# build without gstreamer part
 #
 Summary:	Full featured Multimedia-Player for KDE
-Summary(pl.UTF-8):   Frontend do xine pod KDE
+Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.3
 Release:	1
