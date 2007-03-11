@@ -3,13 +3,13 @@
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
 #
 # Conditional build:
-%bcond_without	gstreamer	# build without gstreamer part
+%bcond_with	gstreamer	# build without gstreamer part
 #
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
