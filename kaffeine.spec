@@ -3,13 +3,13 @@
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
 #
 # Conditional build:
-%bcond_without	gstreamer	# build without gstreamer part
+%bcond_with	gstreamer	# build without gstreamer part
 #
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
@@ -17,22 +17,21 @@ Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-win32-path.patch
 Patch2:		%{name}-desktop.patch
+Patch3:		kde-ac260-lt.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
-BuildRequires:	kdelibs-devel >= 9:3.1
+BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	lame-libs-devel
 BuildRequires:	rpmbuild(macros) >= 1.122
-BuildRequires:	xine-lib-devel >= 1:1.0.2
+BuildRequires:	xine-lib-devel >= 2:1.1.0
 %if %{with gstreamer}
 BuildRequires:	gstreamer-plugins-devel < 0.9.0
 BuildRequires:	gstreamer-plugins-devel >= 0.8.4
 Requires:	gstreamer08x >= 0.8.4
 %endif
-Requires:	kdebase-core >= 9:3.1.90
-Requires:	kdelibs >= 9:3.4.0-4
+Requires:	kdebase-core >= 9:3.2.0
 Requires:	libdvdcss
-Requires:	xine-lib >= 1:1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +46,7 @@ W pe³ni zintegrowany z KDE frontend do xine.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -66,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # no devel libraries, why did these get installed?
 rm -r $RPM_BUILD_ROOT%{_includedir}/%{name}
-rm $RPM_BUILD_ROOT%{_includedir}/%{name}_export.h
 
 rm $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-mplayer2.desktop
 
@@ -106,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkaffeinedvbplugin.la
 %attr(755,root,root) %{_libdir}/libkaffeinedvbplugin.so.0.0.1
 %{_libdir}/libkaffeinepart.la
-%attr(755,root,root) %{_libdir}/libkaffeinepart.so.0.0.1
+%attr(755,root,root) %{_libdir}/libkaffeinepart.so
 %{_datadir}/services/xine_part.desktop
 %{_datadir}/servicetypes/kaffeinedvbplugin.desktop
 
