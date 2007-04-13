@@ -8,16 +8,15 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.8.3
+Version:	0.8.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	667dd56cf02f1343b3a466a685afdf24
-Patch0:		kde-common-PLD.patch
-Patch1:		%{name}-win32-path.patch
-Patch2:		%{name}-desktop.patch
-Patch3:		kde-ac260-lt.patch
+# Source0-md5:	6f62ebb7a6f88ff49f452856a1660d95
+Patch0:		%{name}-win32-path.patch
+Patch1:		%{name}-desktop.patch
+Patch2:		kde-ac260-lt.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
@@ -26,9 +25,8 @@ BuildRequires:	lame-libs-devel
 BuildRequires:	rpmbuild(macros) >= 1.122
 BuildRequires:	xine-lib-devel >= 2:1.1.0
 %if %{with gstreamer}
-BuildRequires:	gstreamer-plugins-devel < 0.9.0
-BuildRequires:	gstreamer-plugins-devel >= 0.8.4
-Requires:	gstreamer08x >= 0.8.4
+BuildRequires:	gstreamer-plugins-base-devel >= 0.10
+Requires:	gstreamer >= 0.10
 %endif
 Requires:	kdebase-core >= 9:3.2.0
 Requires:	libdvdcss
@@ -44,9 +42,8 @@ W pełni zintegrowany z KDE frontend do xine.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
