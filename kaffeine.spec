@@ -8,12 +8,12 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.8.4
+Version:	0.8.5
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	6f62ebb7a6f88ff49f452856a1660d95
+# Source0-md5:	71814e7612f1f7e1b6cd954d352e4201
 Patch0:		%{name}-win32-path.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		kde-ac260-lt.patch
@@ -85,10 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kaffeine
 %attr(755,root,root) %{_libdir}/libkaffeineaudioencoder.so.0.0.1
-%{_libdir}/libkaffeineaudioencoder.la
-%{_libdir}/kde3/libkaffeinemp3lame.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeinemp3lame.so
-%{_libdir}/kde3/libkaffeineoggvorbis.la
 %attr(755,root,root) %{_libdir}/kde3/libkaffeineoggvorbis.so
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/konqueror/servicemenus/*
@@ -99,11 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/servicetypes/kaffeineaudioencoder.desktop
 %{_desktopdir}/kde/kaffeine.desktop
 %{_iconsdir}/[!l]*/*/*/*.png
-%{_libdir}/kde3/libxinepart.la
 %attr(755,root,root) %{_libdir}/kde3/libxinepart.so
-%{_libdir}/libkaffeinedvbplugin.la
 %attr(755,root,root) %{_libdir}/libkaffeinedvbplugin.so.0.0.1
-%{_libdir}/libkaffeinepart.la
 %attr(755,root,root) %{_libdir}/libkaffeinepart.so
 %{_datadir}/services/xine_part.desktop
 %{_datadir}/servicetypes/kaffeinedvbplugin.desktop
@@ -111,7 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 # gstreamer part
 %if %{with gstreamer}
 %attr(755,root,root) %{_libdir}/kde3/libgstreamerpart.so
-%{_libdir}/kde3/libgstreamerpart.la
 %dir %{_datadir}/apps/gstreamerpart
 %{_datadir}/apps/gstreamerpart/gstreamer_part.rc
 %{_datadir}/services/gstreamer_part.desktop
