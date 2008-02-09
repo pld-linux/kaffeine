@@ -10,13 +10,12 @@ Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	0.8.6
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
 # Source0-md5:	102cced6a686f5ffffee94652ca2a093
 Patch0:		%{name}-win32-path.patch
-Patch1:		%{name}-desktop.patch
-Patch2:		kde-ac260-lt.patch
+Patch1:		kde-ac260-lt.patch
 URL:		http://kaffeine.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
@@ -42,8 +41,7 @@ W pełni zintegrowany z KDE frontend do xine.
 %prep
 %setup -q
 %patch0 -p1
-#%patch1 -p1
-%patch2 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
