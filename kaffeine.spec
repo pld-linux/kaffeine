@@ -29,6 +29,7 @@ Requires:	gstreamer >= 0.10
 %endif
 Requires:	kdebase-core >= 9:3.2.0
 Requires:	libdvdcss
+Requires:	xine-output-video-xcb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
