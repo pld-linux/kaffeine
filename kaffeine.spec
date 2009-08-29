@@ -1,35 +1,25 @@
 # TODO
 # - kaffeine-mozilla-0.2.tar.bz2 (Starter-Plugin for Mozilla)
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
-#
-# Conditional build:
-%bcond_without	gstreamer	# build without gstreamer part
-#
+
+%define		qt_ver	4.4
+%define		subver	pre2
+%define		rel		1
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	0.8.7
-Release:	1
+Version:	1.0
+Release:	0.%{subver}.%{rel}
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/kaffeine/%{name}-%{version}.tar.bz2
-# Source0-md5:	3ce644c3c5a9583e9df7187f2cf1d8de
-Patch0:		%{name}-win32-path.patch
-Patch1:		kde-ac260-lt.patch
-URL:		http://kaffeine.sourceforge.net/
-BuildRequires:	automake
-BuildRequires:	cdparanoia-III-devel
-BuildRequires:	kdelibs-devel >= 9:3.2.0
-BuildRequires:	lame-libs-devel
+Source0:	http://dl.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}-%{subver}/kaffeine-%{version}-%{subver}.tar.gz
+# Source0-md5:	24eee004427d6b3f73ffb85a94fc6e3b
+URL:		http://kaffeine.kde.org/
+BuildRequires:	kde4-kdelibs-devel >= 4.2
+BuildRequires:	phonon-devel >= 4.3
+BuildRequires:	qt4-build >= %{qt_ver}
+BuildRequires:	qt4-qmake >= %{qt_ver}
 BuildRequires:	rpmbuild(macros) >= 1.122
-BuildRequires:	xine-lib-devel >= 2:1.1.9
-%if %{with gstreamer}
-BuildRequires:	gstreamer-plugins-base-devel >= 0.10
-Requires:	gstreamer >= 0.10
-%endif
-Requires:	kdebase-core >= 9:3.2.0
-Requires:	libdvdcss
-Requires:	xine-output-video-xcb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,39 +30,29 @@ uses xine as backend.
 W pełni zintegrowany z KDE frontend do xine.
 
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p1
+%setup -q -n %{name}-%{version}-%{subver}
 
 %build
-cp -f /usr/share/automake/config.sub admin
-%{__make} -f admin/Makefile.common
-%configure \
-	--disable-rpath \
-	--with-qt-libraries=%{_libdir} \
-	--with%{!?with_gstreamer:out}-gstreamer
+install -d build
+cd build
+%cmake .. \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_BUILD_TYPE=%{!?debug:release}%{?debug:debug} \
+%if "%{_lib}" == "lib64"
+	-DLIB_SUFFIX=64
+%endif
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+%{__make} -C build install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-# no devel libraries, why did these get installed?
-rm -r $RPM_BUILD_ROOT%{_includedir}/%{name}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/x-test
 
-rm $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-mplayer2.desktop
-# only for translators
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/xx
-
-# pick docs
-%find_lang %{name} --with-kde
-# second try. pic locale files
-# FIXME: remove version?
-%find_lang %{name}-%{version} --with-kde
-cat  %{name}-%{version}.lang >> %{name}.lang
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,30 +63,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kaffeine
-%attr(755,root,root) %{_libdir}/libkaffeineaudioencoder.so.0.0.1
-%attr(755,root,root) %{_libdir}/kde3/libkaffeinemp3lame.so
-%attr(755,root,root) %{_libdir}/kde3/libkaffeineoggvorbis.so
+%{_libdir}/kde4/kaffeinedvb.so
 %{_datadir}/apps/kaffeine
-%{_datadir}/apps/konqueror/servicemenus/*
-%{_datadir}/apps/profiles/kaffeine.profile.xml
-%{_datadir}/mimelnk/application/*.desktop
-%{_datadir}/services/kaffeinemp3lame.desktop
-%{_datadir}/services/kaffeineoggvorbis.desktop
-%{_datadir}/servicetypes/kaffeineaudioencoder.desktop
-%{_desktopdir}/kde/kaffeine.desktop
-%{_iconsdir}/[!l]*/*/*/*.png
-%attr(755,root,root) %{_libdir}/kde3/libxinepart.so
-%attr(755,root,root) %{_libdir}/libkaffeinedvbplugin.so.0.0.1
-%attr(755,root,root) %{_libdir}/libkaffeineepgplugin.so.0.0.1
-%attr(755,root,root) %{_libdir}/libkaffeinepart.so
-%{_datadir}/services/xine_part.desktop
-%{_datadir}/servicetypes/kaffeinedvbplugin.desktop
-%{_datadir}/servicetypes/kaffeineepgplugin.desktop
-
-# gstreamer part
-%if %{with gstreamer}
-%attr(755,root,root) %{_libdir}/kde3/libgstreamerpart.so
-%dir %{_datadir}/apps/gstreamerpart
-%{_datadir}/apps/gstreamerpart/gstreamer_part.rc
-%{_datadir}/services/gstreamer_part.desktop
-%endif
+%{_datadir}/apps/solid/actions/*.desktop
+%{_desktopdir}/kde4/kaffeine.desktop
+%{_iconsdir}/oxygen/*/actions/audio-radio-encrypted.png
+%{_iconsdir}/oxygen/*/actions/video-television-encrypted.png
