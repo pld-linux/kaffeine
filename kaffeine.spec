@@ -12,6 +12,7 @@ Version:	1.0
 Release:	0.%{subver}.%{rel}
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
+# get it via: svn co svn://anonsvn.kde.org/home/kde/trunk/extragear/multimedia/kaffeine
 Source0:	http://dl.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}-%{subver}/kaffeine-%{version}-%{subver}.tar.gz
 # Source0-md5:	24eee004427d6b3f73ffb85a94fc6e3b
 URL:		http://kaffeine.kde.org/
