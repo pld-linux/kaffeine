@@ -16,6 +16,11 @@ Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}-%{subver}/kaffeine-%{version}-%{subver}.tar.gz
 # Source0-md5:	24eee004427d6b3f73ffb85a94fc6e3b
 URL:		http://kaffeine.kde.org/
+BuildRequires:	QtNetwork-devel
+BuildRequires:	QtSvg-devel
+BuildRequires:	automoc4
+BuildRequires:	cmake
+BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdelibs-devel >= 4.2
 BuildRequires:	phonon-devel >= 4.3
 BuildRequires:	qt4-build >= %{qt_ver}
