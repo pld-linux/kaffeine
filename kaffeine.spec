@@ -1,5 +1,4 @@
 # TODO
-# - kaffeine-mozilla-0.2.tar.bz2 (Starter-Plugin for Mozilla)
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
 
 %define		qt_ver	4.4
