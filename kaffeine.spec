@@ -1,16 +1,15 @@
 # TODO
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
-
 %define		qt_ver	4.4
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	1.0
-Release:	1.1
+Version:	1.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
-# Source0-md5:	81bac76f931245a75f20ed26a37c55e3
+# Source0-md5:	72284197b1c90adf75149311e4422efe
 URL:		http://kaffeine.kde.org/
 BuildRequires:	QtNetwork-devel
 BuildRequires:	QtSvg-devel
@@ -21,7 +20,7 @@ BuildRequires:	kde4-kdelibs-devel >= 4.2
 BuildRequires:	phonon-devel >= 4.3
 BuildRequires:	qt4-build >= %{qt_ver}
 BuildRequires:	qt4-qmake >= %{qt_ver}
-BuildRequires:	rpmbuild(macros) >= 1.122
+BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,22 +36,13 @@ W pełni zintegrowany z KDE frontend do xine.
 %build
 install -d build
 cd build
-%cmake .. \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64
-%endif
-
+%cmake ..
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/x-test
 
 %find_lang %{name}
 
