@@ -1,6 +1,8 @@
 # TODO
 # - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
-%define		qt_ver	4.4
+%define		qtver	4.6.3
+%define		kdever	4.5.1
+
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
@@ -11,15 +13,15 @@ Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
 # Source0-md5:	72284197b1c90adf75149311e4422efe
 URL:		http://kaffeine.kde.org/
-BuildRequires:	QtNetwork-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	automoc4
-BuildRequires:	cmake
+BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	automoc4 >= 0.9.88
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	gettext-devel
-BuildRequires:	kde4-kdelibs-devel >= 4.2
-BuildRequires:	phonon-devel >= 4.3
-BuildRequires:	qt4-build >= %{qt_ver}
-BuildRequires:	qt4-qmake >= %{qt_ver}
+BuildRequires:	kde4-kdelibs-devel >= %{kdever}
+BuildRequires:	phonon-devel >= 4.4.2
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,7 +38,8 @@ W pełni zintegrowany z KDE frontend do xine.
 %build
 install -d build
 cd build
-%cmake ..
+%cmake ../
+
 %{__make}
 
 %install
@@ -48,9 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
