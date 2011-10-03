@@ -6,12 +6,13 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	1.1
+Version:	1.2.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
-Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
-# Source0-md5:	72284197b1c90adf75149311e4422efe
+#Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/kaffeine/current/kaffeine-%{version}.tar.gz
+# Source0-md5:	690e48d2e5fe123887109aa9b1bc1c31
 URL:		http://kaffeine.kde.org/
 BuildRequires:	QtNetwork-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
