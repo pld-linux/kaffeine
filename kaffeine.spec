@@ -48,6 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -rf $RPM_BUILD_ROOT${_datadir}/locale/{sr@ijekavian,sr@ijekavianlatin}
 %find_lang %{name}
 
 %clean
