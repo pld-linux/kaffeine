@@ -47,6 +47,7 @@ cd build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -64,5 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kaffeine
 %{_datadir}/apps/solid/actions/*.desktop
 %{_desktopdir}/kde4/kaffeine.desktop
+%{_iconsdir}/hicolor/*/apps/*.png
+%{_iconsdir}/hicolor/scalable/apps/kaffeine.svgz
 %{_iconsdir}/oxygen/*/actions/audio-radio-encrypted.png
 %{_iconsdir}/oxygen/*/actions/video-television-encrypted.png
