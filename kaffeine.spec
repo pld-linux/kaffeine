@@ -26,6 +26,7 @@ BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRequires:	xine-lib-devel >= 1.1.0
 BuildRequires:	xorg-lib-libXScrnSaver-devel
+Requires:	QtSql-sqlite3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
