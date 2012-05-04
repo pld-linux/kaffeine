@@ -7,7 +7,7 @@ Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
 Version:	1.2.2
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 #Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT${_datadir}/locale/{sr@ijekavian,sr@ijekavianlatin}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{sr@ijekavian,sr@ijekavianlatin}
 %find_lang %{name}
 
 %clean
