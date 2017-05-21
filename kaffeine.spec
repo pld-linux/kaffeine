@@ -1,32 +1,45 @@
 # TODO
-# - check: http://kaffeine.sourceforge.net/index.php?page=faq#question4
-%define		qtver	4.6.3
-%define		kdever	4.5.1
+%define		qtver	5.4
+%define		kdever	5.11
 
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	1.2.2
-Release:	4
+Version:	2.0.9
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
-#Source0:	http://downloads.sourceforge.net/project/kaffeine/kaffeine/%{name}-%{version}/kaffeine-%{version}.tar.gz
-Source0:	http://downloads.sourceforge.net/project/kaffeine/current/kaffeine-%{version}.tar.gz
-# Source0-md5:	690e48d2e5fe123887109aa9b1bc1c31
+Source0:	http://download.kde.org/stable/kaffeine/%{version}/src/%{name}-%{version}.tar.xz
+# Source0-md5:	8a5114cf18fcaf3bd2656dcadfd23995
 URL:		http://kaffeine.kde.org/
-BuildRequires:	QtNetwork-devel >= %{qtver}
-BuildRequires:	QtSvg-devel >= %{qtver}
-BuildRequires:	automoc4 >= 0.9.88
-BuildRequires:	cmake >= 2.8.0
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Network-devel >= %{qtver}
+BuildRequires:	Qt5Sql-devel >= %{qtver}
+BuildRequires:	Qt5Widgets-devel >= %{qtver}
+BuildRequires:	Qt5X11Extras-devel >= %{qtver}
+BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-tools
-BuildRequires:	kde4-kdelibs-devel >= %{kdever}
-BuildRequires:	phonon-devel >= 4.4.2
-BuildRequires:	qt4-build >= %{qtver}
-BuildRequires:	qt4-qmake >= %{qtver}
+BuildRequires:	kf5-extra-cmake-modules >= 1.0.0
+BuildRequires:	kf5-kcoreaddons-devel >= %{kdever}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kdever}
+BuildRequires:	kf5-kdoctools-devel >= %{kdever}
+BuildRequires:	kf5-ki18n-devel >= %{kdever}
+BuildRequires:	kf5-kio-devel >= %{kdever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kdever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kdever}
+BuildRequires:	kf5-solid-devel >= %{kdever}
+BuildRequires:	libv4l-devel
 BuildRequires:	rpmbuild(macros) >= 1.577
-BuildRequires:	xine-lib-devel >= 1.1.0
+BuildRequires:	vlc-devel >= 1.2
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXScrnSaver-devel
-Requires:	QtSql-sqlite3
+Requires:	Qt5Core >= %{qtver}
+Requires:	Qt5Network >= %{qtver}
+Requires:	Qt5Sql >= %{qtver}
+Requires:	Qt5Sql-sqldriver-sqlite3 >= %{qtver}
+Requires:	Qt5Widgets >= %{qtver}
+Requires:	Qt5X11Extras >= %{qtver}
+Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,21 +65,43 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{sr@ijekavian,sr@ijekavianlatin}
+rm -r $RPM_BUILD_ROOT%{_docdir}
+
+rm -r $RPM_BUILD_ROOT%{_localedir}/{sr@ijekavian,sr@ijekavianlatin}
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_desktop_database
+%update_icon_cache hicolor
+
+%postun
+%update_desktop_database
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/dtvdaemon
 %attr(755,root,root) %{_bindir}/kaffeine
-%attr(755,root,root) %{_bindir}/kaffeine-xbu
-%{_datadir}/apps/profiles/kaffeine.profile.xml
-%{_datadir}/apps/kaffeine
-%{_datadir}/apps/solid/actions/*.desktop
-%{_desktopdir}/kde4/kaffeine.desktop
-%{_iconsdir}/hicolor/*/apps/*.png
-%{_iconsdir}/hicolor/scalable/apps/kaffeine.svgz
-%{_iconsdir}/oxygen/*/actions/audio-radio-encrypted.png
-%{_iconsdir}/oxygen/*/actions/video-television-encrypted.png
+%{_datadir}/appdata/org.kde.kaffeine.appdata.xml
+%{_desktopdir}/org.kde.kaffeine.desktop
+%dir %{_datadir}/kaffeine
+%{_datadir}/kaffeine/scanfile.dvb
+%{_datadir}/solid/actions/kaffeine_play_audiocd.desktop
+%{_datadir}/solid/actions/kaffeine_play_dvd.desktop
+%{_datadir}/solid/actions/kaffeine_play_videocd.desktop
+%{_iconsdir}/hicolor/scalable/apps/kaffeine.svg
+%{_iconsdir}/hicolor/scalable/actions/*.svg
+%{_iconsdir}/hicolor/scalable/devices/*.svg
+%{_iconsdir}/hicolor/scalable/mimetypes/*.svg
+%{_iconsdir}/hicolor/scalable/places/*.svg
+%{_iconsdir}/hicolor/scalable/status/*.svg
+%{_mandir}/man1/kaffeine.1*
+%lang(ca) %{_mandir}/ca/man1/kaffeine.1*
+%lang(it) %{_mandir}/it/man1/kaffeine.1*
+%lang(nl) %{_mandir}/nl/man1/kaffeine.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/kaffeine.1*
+%lang(sv) %{_mandir}/sv/man1/kaffeine.1*
+%lang(uk) %{_mandir}/uk/man1/kaffeine.1*
