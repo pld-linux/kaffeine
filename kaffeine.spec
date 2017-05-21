@@ -40,6 +40,14 @@ Requires:	Qt5Sql-sqldriver-sqlite3 >= %{qtver}
 Requires:	Qt5Widgets >= %{qtver}
 Requires:	Qt5X11Extras >= %{qtver}
 Requires:	hicolor-icon-theme
+Requires:	kf5-kcoreaddons >= %{kdever}
+Requires:	kf5-kdbusaddons >= %{kdever}
+Requires:	kf5-ki18n >= %{kdever}
+Requires:	kf5-kio >= %{kdever}
+Requires:	kf5-kwidgetsaddons >= %{kdever}
+Requires:	kf5-kxmlgui >= %{kdever}
+Requires:	kf5-solid >= %{kdever}
+Requires:	vlc >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
