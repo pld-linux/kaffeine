@@ -11,6 +11,7 @@ License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://download.kde.org/stable/kaffeine/%{version}/src/%{name}-%{version}.tar.xz
 # Source0-md5:	89fd6614379789f594af30bc5c72dd63
+Patch0:		%{name}-loglevel.patch
 URL:		http://kaffeine.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
@@ -61,6 +62,7 @@ W pełni zintegrowany z KDE frontend do xine.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 install -d build

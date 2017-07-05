@@ -1,0 +1,28 @@
+--- src/mainwindow.cpp.old	2017-07-05 21:55:13.385793004 +0200
++++ src/mainwindow.cpp	2017-07-05 21:54:58.862566591 +0200
+@@ -53,16 +53,16 @@
+ 
+ // log categories. Should match log.h
+ 
+-Q_LOGGING_CATEGORY(logCam, "kaffeine.cam")
+-Q_LOGGING_CATEGORY(logDev, "kaffeine.dev")
+-Q_LOGGING_CATEGORY(logDvb, "kaffeine.dvb")
+-Q_LOGGING_CATEGORY(logDvbSi, "kaffeine.dvbsi")
+-Q_LOGGING_CATEGORY(logEpg, "kaffeine.epg")
++Q_LOGGING_CATEGORY(logCam, "kaffeine.cam", QtInfoMsg)
++Q_LOGGING_CATEGORY(logDev, "kaffeine.dev", QtInfoMsg)
++Q_LOGGING_CATEGORY(logDvb, "kaffeine.dvb", QtInfoMsg)
++Q_LOGGING_CATEGORY(logDvbSi, "kaffeine.dvbsi", QtInfoMsg)
++Q_LOGGING_CATEGORY(logEpg, "kaffeine.epg", QtInfoMsg)
+ 
+-Q_LOGGING_CATEGORY(logConfig, "kaffeine.config")
+-Q_LOGGING_CATEGORY(logMediaWidget, "kaffeine.mediawidget")
+-Q_LOGGING_CATEGORY(logPlaylist, "kaffeine.playlist")
+-Q_LOGGING_CATEGORY(logSql, "kaffeine.sql")
++Q_LOGGING_CATEGORY(logConfig, "kaffeine.config", QtInfoMsg)
++Q_LOGGING_CATEGORY(logMediaWidget, "kaffeine.mediawidget", QtInfoMsg)
++Q_LOGGING_CATEGORY(logPlaylist, "kaffeine.playlist", QtInfoMsg)
++Q_LOGGING_CATEGORY(logSql, "kaffeine.sql", QtInfoMsg)
+ 
+ #define FILTER_RULE "kaffeine.*.debug=true"
+ 
