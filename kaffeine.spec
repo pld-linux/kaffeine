@@ -5,12 +5,12 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	2.0.9
+Version:	2.0.10
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://download.kde.org/stable/kaffeine/%{version}/src/%{name}-%{version}.tar.xz
-# Source0-md5:	8a5114cf18fcaf3bd2656dcadfd23995
+# Source0-md5:	89fd6614379789f594af30bc5c72dd63
 URL:		http://kaffeine.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
@@ -26,6 +26,7 @@ BuildRequires:	kf5-kdoctools-devel >= %{kdever}
 BuildRequires:	kf5-ki18n-devel >= %{kdever}
 BuildRequires:	kf5-kio-devel >= %{kdever}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{kdever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kdever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kdever}
 BuildRequires:	kf5-solid-devel >= %{kdever}
 BuildRequires:	libv4l-devel
@@ -45,6 +46,7 @@ Requires:	kf5-kdbusaddons >= %{kdever}
 Requires:	kf5-ki18n >= %{kdever}
 Requires:	kf5-kio >= %{kdever}
 Requires:	kf5-kwidgetsaddons >= %{kdever}
+Requires:	kf5-kwindowsystem >= %{kdever}
 Requires:	kf5-kxmlgui >= %{kdever}
 Requires:	kf5-solid >= %{kdever}
 Requires:	vlc >= 1.2
@@ -110,6 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %{_mandir}/ca/man1/kaffeine.1*
 %lang(it) %{_mandir}/it/man1/kaffeine.1*
 %lang(nl) %{_mandir}/nl/man1/kaffeine.1*
+%lang(pt) %{_mandir}/pt/man1/kaffeine.1*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/kaffeine.1*
 %lang(sv) %{_mandir}/sv/man1/kaffeine.1*
 %lang(uk) %{_mandir}/uk/man1/kaffeine.1*
