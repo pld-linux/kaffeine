@@ -5,13 +5,12 @@
 Summary:	Full featured Multimedia-Player for KDE
 Summary(pl.UTF-8):	Frontend do xine pod KDE
 Name:		kaffeine
-Version:	2.0.10
-Release:	2
+Version:	2.0.12.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
-Source0:	http://download.kde.org/stable/kaffeine/%{version}/src/%{name}-%{version}.tar.xz
-# Source0-md5:	89fd6614379789f594af30bc5c72dd63
-Patch0:		%{name}-loglevel.patch
+Source0:	http://download.kde.org/stable/kaffeine/2.0.12/src/%{name}-%{version}.tar.xz
+# Source0-md5:	e3bdfb9864b69abd6b9147b56bc925a2
 URL:		http://kaffeine.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
@@ -62,7 +61,6 @@ W pełni zintegrowany z KDE frontend do xine.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 install -d build
