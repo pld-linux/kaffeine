@@ -3,15 +3,15 @@
 %define		kdever	5.11
 
 Summary:	Full featured Multimedia-Player for KDE
-Summary(pl.UTF-8):	Frontend do xine pod KDE
+Summary(pl.UTF-8):	W pełni funkcjonalny odtwarzacz multimediów dla KDE
 Name:		kaffeine
-Version:	2.0.12.1
+Version:	2.0.18
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
-Source0:	http://download.kde.org/stable/kaffeine/2.0.12/src/%{name}-%{version}.tar.xz
-# Source0-md5:	e3bdfb9864b69abd6b9147b56bc925a2
-URL:		http://kaffeine.kde.org/
+Source0:	https://download.kde.org/Attic/kaffeine/%{name}-%{version}.tar.xz
+# Source0-md5:	185cd114e1ebcf15b98674e872a53556
+URL:		https://apps.kde.org/kaffeine/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
@@ -29,6 +29,7 @@ BuildRequires:	kf5-kwidgetsaddons-devel >= %{kdever}
 BuildRequires:	kf5-kwindowsystem-devel >= %{kdever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kdever}
 BuildRequires:	kf5-solid-devel >= %{kdever}
+# libdvbv5
 BuildRequires:	libv4l-devel
 BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRequires:	vlc-devel >= 1.2
@@ -53,11 +54,10 @@ Requires:	vlc >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kaffeine is a full featured Multimedia-Player for KDE. By default it
-uses xine as backend.
+Kaffeine is a full featured Multimedia-Player for KDE.
 
 %description -l pl.UTF-8
-W pełni zintegrowany z KDE frontend do xine.
+Kaffeine to w pełni funkcjonalny odtwarzacz multimediów dla KDE.
 
 %prep
 %setup -q
@@ -75,9 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_docdir}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}
 
-rm -r $RPM_BUILD_ROOT%{_localedir}/{sr@ijekavian,sr@ijekavianlatin}
 %find_lang %{name}
 
 %clean
@@ -93,15 +92,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/dtvdaemon
+%doc Changelog README.md TODO
 %attr(755,root,root) %{_bindir}/kaffeine
-%{_datadir}/appdata/org.kde.kaffeine.appdata.xml
-%{_desktopdir}/org.kde.kaffeine.desktop
 %dir %{_datadir}/kaffeine
 %{_datadir}/kaffeine/scanfile.dvb
+%{_datadir}/metainfo/org.kde.kaffeine.appdata.xml
+# better owner? no other users so far
+%dir %{_datadir}/profiles
+%{_datadir}/profiles/kaffeine.profile.xml
 %{_datadir}/solid/actions/kaffeine_play_audiocd.desktop
 %{_datadir}/solid/actions/kaffeine_play_dvd.desktop
 %{_datadir}/solid/actions/kaffeine_play_videocd.desktop
+%{_desktopdir}/org.kde.kaffeine.desktop
 %{_iconsdir}/hicolor/scalable/apps/kaffeine.svg
 %{_iconsdir}/hicolor/scalable/actions/*.svg
 %{_iconsdir}/hicolor/scalable/devices/*.svg
